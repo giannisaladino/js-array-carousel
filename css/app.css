@@ -10,7 +10,7 @@
 }
 
 .slider {
-    width: 50vw;
+    width: 1200px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -26,7 +26,7 @@
 .item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .item.active {
@@ -36,12 +36,27 @@
 
 .next, 
 .prev  {
-
+    font-size: 20px;
     position: absolute;
     top: 50%;
     transform: translateY( -50%);
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.427);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    padding: 10px;
 }
+
+.next:hover {
+    background-color: white;
+    transition: 300ms;
+}
+
+.prev:hover {
+    background-color: white;
+    transition: 300ms;
+}
+
 
 .next {
     right: 20px;
