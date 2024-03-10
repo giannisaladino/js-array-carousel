@@ -36,4 +36,35 @@ itemsContainerDOMElement.innerHTML = itemsContent;
 const divItem = document.getElementsByClassName('item');
 
 // aggiungo la classe 'active' al primo item
-divItem[0].classList.add('active');
+
+let activeItemIndex = 0;
+divItem[activeItemIndex].classList.add('active');
+
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+next.addEventListener('click', function(){
+
+    // 1 tolgo la classe active dall'elemento corrente
+    divItem[activeItemIndex].classList.remove('active');
+
+    // 2 incremento di 1 l'item
+    activeItemIndex++;
+
+    // 3 aggiungo la classe active all'elemento incrementato
+    divItem[activeItemIndex].classList.add('active');
+
+})
+
+prev.addEventListener('click', function(){
+
+    // 1 tolgo la classe active dall'elemento corrente
+    divItem[activeItemIndex].classList.remove('active');
+
+    // 2 incremento di -1 l'item
+    activeItemIndex--;
+
+    // 3 aggiungo la classe active all'elemento incrementato
+    divItem[activeItemIndex].classList.add('active');
+
+})
